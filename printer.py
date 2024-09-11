@@ -43,15 +43,15 @@ class PrinterInstallerApp:
         self.status_label.pack(pady=10)
         
     def scan_printer(self):
-        ip = "10.157.100.101"
+        ip = "printer IP" #printer ip
         if is_printer_accessible(ip):
             self.status_label.config(text=f"Printer at {ip} is accessible")
         else:
             self.status_label.config(text=f"Printer at {ip} is NOT accessible")
     
     def install_printer(self):
-        ip = "10.157.100.101"
-        driver_url = "https://support.hp.com/pl-pl/drivers/closure/hp-laserjet-enterprise-m605-series/7087291"
+        ip = "Printer IP" #insert printer IP
+        driver_url = "Printer driver" #instert download url from web page
         driver_path = download_driver(driver_url, f"{ip}_driver.inf")
         
         if install_printer(ip, driver_path):
